@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="charcuteria_enbutido_action" name="embutidos"
+                     res_model="charcuteria.enbutidos" />
+	<menuitem name="Panaderia" id="menu_charcuteria" sequence="10" />
+        <menuitem name="Inicio" id="menu_inicio" parent="menu_charcuteria" sequence="10"/>
+        <menuitem id="charcuteria_enbutidos_menu"
+                  name="Embutidos"
+                  action="charcuteria_embutidos_action"
+                  parent="menu_inicio"
+                  sequence="1" />
+		  
+
+        <record id="charcuteria_embutidos_view_tree" model="ir.ui.view">
+            <field name="name">Lista Embutidos</field>
+            <field name="model">charcuteria.enbutidos</field>
+            <field name="arch" type="xml">
+		<tree>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                    <field name="precio" />
+		    <field name="temporada" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="charcuteria_embutidos_view_form" model="ir.ui.view">
+            <field name="name">Formulario de embutidos</field>
+            <field name="model">charcuteria.embutidos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="codigo" />
+                        <field name="nombre" />
+                        <field name="precio" />
+		        <field name="temporada" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="panaderia_panes_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de embutidos</field>
+            <field name="model">charcuteria.embutidos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                    <field name="precio" />
+		    <field name="temporada" />
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>
