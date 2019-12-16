@@ -1,0 +1,1 @@
+# Charcuteria_Odoo
